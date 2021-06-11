@@ -1,16 +1,8 @@
-// create array
-var statements = [
-  { q: "Infants are born with approximately 300 bones", a: "t" },
-  { q: "The largest bone in the human body is the tibia", a: "f"},
-  { q: "An average adult brain weighs one pound", a: "f"},
-  { q: "There are 26 bones in the human foot", a: "t"},
-  { q: "Banging your head against the wall burns 150 calories an hour", a: "t"}
-];
-
-var score = 0;
+// my timer starts after the questions are answered -_-
 var timer = document.getElementById('countdown');
+var startBtn = document.getElementById('start');
 
- 
+
 function countdown(){
 var timeLeft = 60;
 
@@ -24,29 +16,42 @@ var timeLeft = 60;
     }else{
       timer.textContent = '';
       clearInterval(timeInterval);
-      displayMessage();
+      runQuestions();
     }
   }, 1000);
 }
 
-window.onload = countdown;
-
-for (var i = 0; i < statements.length; i++)   {
-  var answer = confirm(statements[i].q);
+    startBtn.onclick = countdown;
 
 
-  if ((answer === true && statements[i].a === "t") ||
-      (answer === false && statements[i].a ==="f")) {
-        score++;
-        window.alert("Correct!");
-      }
-      else{
-        score--;
-        window.alert("Wrong!");
-      }
-  }
+  // create array
+    var statements = [
+      { q: "Infants are born with approximately 300 bones", a: "t" },
+      { q: "The largest bone in the human body is the tibia", a: "f"},
+      { q: "An average adult brain weighs one pound", a: "f"},
+      { q: "There are 26 bones in the human foot", a: "t"},
+      { q: "Banging your head against the wall burns 150 calories an hour", a: "t"}
+    ];
+  
+  var score = 0;
 
-    alert("You got " + score + "/" + statements.length);
+  for (var i = 0; i < statements.length; i++)   {
+    var answer = confirm(statements[i].q);
+
+
+    if ((answer === true && statements[i].a === "t") ||
+        (answer === false && statements[i].a ==="f")) {
+          score++;
+          window.alert("Correct!");
+        }
+        else{
+          score--;
+          window.alert("Wrong!");
+        }
+    }
+
+      alert("You got " + score + "/" + statements.length);
+
 
 
 // Lines 53 - 91 are a lengthy version but it does work. I had trouble getting the score to calculate
