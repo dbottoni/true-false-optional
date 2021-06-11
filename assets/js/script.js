@@ -10,23 +10,6 @@ var statements = [
 var score = 0;
 var timer = document.getElementById('countdown');
 
-for (var i = 0; i < statements.length; i++)   {
-  var answer = confirm(statements[i].q);
-
-
-  if ((answer === true && statements[i].a === "t") ||
-      (answer === false && statements[i].a ==="f")) {
-        score++;
-        window.alert("Correct!");
-      }
-      else{
-        score--;
-        window.alert("Wrong!");
-      }
-  }
-
-    alert("You got " + score + "/" + statements.length);
-
  
 function countdown(){
 var timeLeft = 60;
@@ -47,6 +30,23 @@ var timeLeft = 60;
 }
 
 window.onload = countdown;
+
+for (var i = 0; i < statements.length; i++)   {
+  var answer = confirm(statements[i].q);
+
+
+  if ((answer === true && statements[i].a === "t") ||
+      (answer === false && statements[i].a ==="f")) {
+        score++;
+        window.alert("Correct!");
+      }
+      else{
+        score--;
+        window.alert("Wrong!");
+      }
+  }
+
+    alert("You got " + score + "/" + statements.length);
 
 
 // Lines 53 - 91 are a lengthy version but it does work. I had trouble getting the score to calculate
