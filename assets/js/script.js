@@ -1,4 +1,4 @@
-// my timer starts after the questions are answered -_-
+// timer starts after the questions are answered -_-
 var timer = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
 
@@ -25,6 +25,7 @@ var timeLeft = 60;
 
 
   // create array
+  
     var statements = [
       { q: "Infants are born with approximately 300 bones", a: "t" },
       { q: "The largest bone in the human body is the tibia", a: "f"},
